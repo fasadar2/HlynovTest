@@ -6,20 +6,36 @@ using Microsoft.Office.Interop.Word;
 
 namespace HlynovTestv2
 {
-    
+    /// <summary>
+    /// Контроллер работы с документами.
+    /// </summary>
     class WordController
     {
+        /// <summary>
+        /// Константа с ключом имени шаблонных полей.
+        /// </summary>
         private const string keyName = "templateField";
+        /// <summary>
+        /// Имя файла.
+        /// </summary>
         private string _fileName;
+        ///<inheritdoc/>
         private TagController _tagController;
 
         public string FileName { get => _fileName; set => _fileName = value; }
         public TagController TagControllerField { get => _tagController; set => _tagController = value; }
+        /// <summary>
+        /// Конструктор класса контроллера.
+        /// </summary>
+        /// <param name="fileName">Название файла.</param>
         public WordController(string fileName)
         {
             FileName = fileName;
             TagControllerField = new TagController();
         }
+        /// <summary>
+        /// Метод чтения документов.
+        /// </summary>
         public void ReadDocument()
         {
             var wordApp = new  Microsoft.Office.Interop.Word.Application();
@@ -45,6 +61,10 @@ namespace HlynovTestv2
                 wordApp.Quit();
             }
         }
+        /// <summary>
+        /// Метод создания документа.
+        /// </summary>
+        /// <param name="createDocPath">Путь до создоваемого документа.</param>
         public void CreateDocument(string createDocPath)
         {
 

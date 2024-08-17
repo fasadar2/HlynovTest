@@ -1,12 +1,15 @@
 ﻿namespace HlynovTestv2
 {
+    /// <summary>
+    /// Класс отправщик писем на почту.
+    /// </summary>
     class EmailSender
     {
         private string _email;
         private string _file_path;
-        ///<summary>Основной констркутор</summary>
-        ///<param name="email">Адрес электронной почты на который нужно отправить значение</param>
-        ///<param name="file_path">Путь до файла который нужно отправить</param>
+        ///<summary>Основной констркутор.</summary>
+        ///<param name="email">Адрес электронной почты на который нужно отправить значение.</param>
+        ///<param name="file_path">Путь до файла который нужно отправить.</param>
         public EmailSender(string email, string file_path)
         {
             Email = email;

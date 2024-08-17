@@ -21,7 +21,11 @@ namespace HlynovTestv2
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// Обработчик клика по кнопке выбрать шаблон.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SelectTemplateButton_Click(object sender, RoutedEventArgs e)
         {
             FileDialog dialog = new FileDialog("Word Documents|*.docx", "Выберите шаблон для заполнения");
@@ -44,6 +48,11 @@ namespace HlynovTestv2
             }
 
         }
+        /// <summary>
+        /// Обработчик клика по кнопке отправить сообщение по электронной почте.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SendEmailButton_Click(Object sender, RoutedEventArgs e)
         {
             EmailSender emailSender = new EmailSender(EmailTextBox.Text, createdDoc);
@@ -53,7 +62,11 @@ namespace HlynovTestv2
             }
             logService.Log($"Отправлен документ по адресу: {EmailTextBox.Text}");
         }
-
+        /// <summary>
+        /// Обработчик клика по кнопке создать документ.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CreateDocumentButton_Click(object sender, RoutedEventArgs e)
         {
             FileDialog dialog = new FileDialog("Word Documents|*.docx", "Выберите куда сохранится заполненный по шаблону документ");
@@ -67,7 +80,11 @@ namespace HlynovTestv2
             }
             logService.Log($"Сформирован документ {templateName}");
         }
-
+        /// <summary>
+        /// Обработчик клика по кнопке информации.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void InfoButton_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Загрузите шаблон нажав на кнопку \"Выбрать шаблон\"\n" +
